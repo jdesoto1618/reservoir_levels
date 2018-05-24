@@ -3,31 +3,44 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.page_title {
-	text-align: center;
+.control-label {
+  font-size: 20px;
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 6px 47px;
+  font-size: 20px;
+}
+
+.form-group {
+  margin-bottom: 0;
 }
 
 #result_text {
-	text-align: center;
-    font-size: 30px;
-    color: blue;
-    text-decoration: underline;
+	/* text-align: center; */
+  font-size: 30px;
+  /* color: blue; */
+  /* text-decoration: underline; */
 }
 
 #result {
-  text-align: center;
+  /* text-align: center; */
   font-size: 30px;
   color: blue;
 }
 
-#submit_button {
+/* #submit_button {
 	background: #5bc0de;
   color: #fff;
 	border: 1px solid #5bc0de;
 	border-radius: 4px;
 	padding: 5px 7px;
   font-size: 15px;
-}
+} */
 
 #res_dropdown {
   /*margin-left: 33.5%;*/

@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <!-- set the viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservoir Levels</title>
     <!-- Latest compiled and minified CSS for bootstrap 3.3.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -11,24 +13,64 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <h1 class='page_title'>Check A Reservoir</h1>
-    <h2 class='page_title'>Select a reservoir to see its level</h2>
-    <select id='res_dropdown'>
-    	<option id='43210'>43210</option>
-        <option id='43610'>43610</option>
-        <option id='51771'>51771</option>
-        <option id='52698'>52698</option>
-        <option id='53116'>53116</option>
-        <option id='62310'>62310</option>
-        <option id='63210'>63210</option>
-    </select>
-    <!-- user types the reservoir level from SmartCover website -->
-    <input id='sc_level' type='text' placeholder='SmartCover Level'/>
-    <button id='submit_button'>Get Level</button>
-    <!-- the word result is always displayed -->
-    <h3 id='result_text'>Result:</h3>
-    <!-- actual feet down shown underneath -->
-    <h1 id='result'></h1>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">North</a></li>
+            <li role="presentation"><a href="#">South</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="jumbotron">
+        <h1 class="page-title">Check Reservoir Level</h1>
+        <label class="control-label col-sm-2" for="pwd">Reservoir:</label>
+        <div class="form-group col-sm-10">
+          <select id='res_dropdown' class="lead">
+        	  <option id='43210'>43210</option>
+            <option id='43610'>43610</option>
+            <option id='51771'>51771</option>
+            <option id='52698'>52698</option>
+            <option id='53116'>53116</option>
+            <option id='62310'>62310</option>
+            <option id='63210'>63210</option>
+          </select>
+        </div> <!-- closes form-group div -->
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">Reading:</label>
+          <div class="col-sm-10">
+            <!-- user types the reservoir level from SmartCover website -->
+            <p><input id='sc_level' type='text' placeholder='SmartCover Level'/></p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <p><button id='submit_button' class="btn btn-md btn-success">Get Level</button></p>
+          </div>
+        </div>
+
+
+          <!-- placing the button in the p tag gives it its own line -->
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+
+
+        <!-- the word result is always displayed -->
+        <h3 id='result_text' class="text-center">Result:</h3>
+        <!-- actual feet down shown underneath the word results-->
+        <h1 id='result' class="text-center"></h1>
+      </div> <!-- closes jumbotron div -->
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+        </div>
+
+        <div class="col-lg-6">
+          <!-- <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p> -->
+        </div>
+      </div> <!-- closes row marketing div -->
+    </div> <!-- container -->
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript for bootstrap 3.3.7 -->
@@ -52,4 +94,5 @@
 	add checks on each res which act as boundaries for levels entered which are too low or high for a particular res, as a front-end validation? better to check values on the backend
 	place everything inside a white box, keep the #d3d3d3 body background, make a rounded, 4px border for this box
   add responsiveness, meta tag in head
+  use a selector for north and south reservoirs
  -->
