@@ -1,7 +1,51 @@
-/* .form-control {
-  width: 11%;
+body {
+	background: #d3d3d3;
+  font-family: 'Roboto', sans-serif;
 }
 
-.bg-primary {
-  border-radius: 10px;
-} */
+.page_title {
+	text-align: center;
+}
+
+#result_text {
+	text-align: center;
+    font-size: 30px;
+    color: blue;
+    text-decoration: underline;
+}
+
+#result {
+  text-align: center;
+  font-size: 30px;
+  color: blue;
+}
+
+#submit_button {
+	background: #5bc0de;
+  color: #fff;
+	border: 1px solid #5bc0de;
+	border-radius: 4px;
+	padding: 5px 7px;
+  font-size: 15px;
+}
+
+#res_dropdown {
+  /*margin-left: 33.5%;*/
+  font-size: 15px;
+  border: 1px solid #5bc0de;
+  border-radius: 4px;
+  padding: 5px 7px;
+}
+
+#sc_level {
+	/* width: 124px; */
+	/*margin: 0 auto;*/
+	font-size: 15px;
+  border: 1px solid #5bc0de;
+  border-radius: 4px;
+  padding: 6px 7px;
+}
+
+.num_text {
+	color: red;
+}
