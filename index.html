@@ -41,7 +41,7 @@
           <label class="control-label col-sm-2">Reading:</label>
           <div class="col-sm-10">
             <!-- user types the reservoir level from SmartCover website -->
-            <p><input id='sc_level' type='text' placeholder='SmartCover Level'/></p>
+            <p><input id='sc_level' type='text' placeholder='SmartCover Level'></p>
           </div>
         </div>
         <div class="form-group">
@@ -50,10 +50,8 @@
           </div>
         </div>
 
-
           <!-- placing the button in the p tag gives it its own line -->
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
-
 
         <!-- the word result is always displayed -->
         <h3 id='result_text' class="text-center">Result:</h3>
@@ -80,20 +78,11 @@
   </body>
 </html>
   <!--
-  TODO: add case for unrecognized res. *done*
-	add type conversion in case someone gets cute and tries a string. *done*
-	add check for one or more parameters not specified. *done. handled by default case*
-	add rest of reservoirs for the south
-	place numbers, inputs on the dom
-	use a dropdown select for choosing a res. this will be a string, do a type conversion
-	add a check for 1 foot value, so the output isn't "1 feet down" *done*
+  TODO:
+	add check for one or more parameters not specified.
 	since there are 12 inches in 1 foot, might want to consider converting a noninteger output to feet + inches. maybe...
-	store res and full levels as an object
 	stretch: as a user, I can view the feet down values of multiple reservoirs at once
-	add restart button, window.location.reload or something to that effect... check js game program or google for exact syntax
 	add checks on each res which act as boundaries for levels entered which are too low or high for a particular res, as a front-end validation? better to check values on the backend
-	place everything inside a white box, keep the #d3d3d3 body background, make a rounded, 4px border for this box
-  add responsiveness, meta tag in head
-  use a selector for north and south reservoirs
-  might need to store reservoirs for the north and south in separate array and or objects. this might help with adding or removing an entire group at a time, depending on north or south button clicked
+  add responsiveness
+  front-end validation
  -->

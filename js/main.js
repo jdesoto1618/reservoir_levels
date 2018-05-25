@@ -58,7 +58,6 @@ $(document).ready(function() {
     // join returns a string from an array, in this case the output array. so, at this point, the output array now holds all the keys from the north object. join('') places all the strings next to each other without whitespace. this allows each one to be used as an option on the res_dropdown select. use html since the markup is being modified
     $('#res_dropdown').html(output.join(''));
   }) // ends north button click function
-
    // when the get level button is clicked
   $("button").click(function() {
   	// run the resLevel function when the button is clicked. grab the text of the selected option from the dropdown and use this as the first parameter of the resLevel function. the second parameter is the inputted smartcover level from the user. grab that value using .val()
