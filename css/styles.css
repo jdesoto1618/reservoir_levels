@@ -119,3 +119,69 @@ body {
 .col-sm-offset-2 {
 	margin-bottom: 10px;
 }
+
+/* on screens that are 498px or less. this breakpoint exists because of font size in nav */
+@media screen and (max-width: 498px) {
+  /* set menu bar div styles */
+  .menu-container {
+    display: block;
+    cursor: pointer;
+    padding: 5px;
+    width: 35px; /* set div width to be the similar to the menu bars width */
+  }
+
+  .list-inline {
+    height: 50px;
+    transition: height 0.6s;
+  }
+
+  .north_button,
+  .south_button,
+  .start_over_button {
+    width: 100%;
+    margin-left: 2px;
+  }
+
+  .nav-pills>li>a {
+    border-radius: 25px;
+    text-align: center;
+  }
+
+  /* set up menu bar width, height, color, and transition */
+  .b1, .b2, .b3 {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.3s;
+    border-radius: 10px;
+  }
+
+  /* set the height when the hamburger menu is clicked */
+  .open {
+    height: 140px;
+  }
+
+  /* Rotate top bar */
+  .change .b1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-5px, 6px) ;
+  }
+
+  /* Fade out the second bar */
+  .change .b2 {
+    opacity: 0;
+  }
+
+  /* Rotate bottom bar */
+  .change .b3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-7px, -8px) ;
+  }
+
+  .header.clearfix {
+    width: 100%; /* set buttons to take up their own row */
+    overflow: hidden; /* this allows the buttons to be hidden by the rest of the page until the hamburger menu is clicked */
+  }
+
+}

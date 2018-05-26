@@ -16,11 +16,18 @@
     <div class="container">
       <div class="header clearfix">
         <nav>
-          <ul class="nav nav-pills pull-right">
+          <!-- div to hold the menu bars. these are placed after the nav tag and before the ul -->
+          <div class="menu-container">
+            <!-- set up the three menu bars -->
+            <div class="b1"></div>
+            <div class="b2"></div>
+            <div class="b3"></div>
+          </div> <!-- ends menu-container div -->
+          <ul class="nav nav-pills pull-right list-inline">
             <!-- buttons to switch between north and south -->
-            <li role="presentation" class="active" id="north_button"><a href="#">North Reservoirs</a></li>
-            <li role="presentation" id="south_button"><a href="#">South Reservoirs</a></li>
-            <li role="presentation" id="start_over"><a href="#" onclick="window.location.reload()">Start Over</a></li>
+            <li role="presentation" class="active north_button" id="north_button"><a href="#">North Reservoirs</a></li>
+            <li role="presentation" class="south_button" id="south_button"><a href="#">South Reservoirs</a></li>
+            <li role="presentation" class="start_over_button" id="start_over"><a href="#" onclick="window.location.reload()">Start Over</a></li>
           </ul>
         </nav>
       </div> <!-- closes header clearfix div -->
