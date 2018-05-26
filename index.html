@@ -23,8 +23,14 @@
         </nav>
       </div> <!-- closes header clearfix div -->
 
+
       <div class="jumbotron">
-        <h1 class="page-title">Check Reservoir Level</h1>
+        <!-- fade alert for empty input field -->
+        <div id="alert_message" class="alert alert-danger alert-dismissible fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          Please enter a reading
+        </div>
+        <h1 class="page-title">Check Water Level</h1>
         <label class="control-label col-sm-2">Reservoir:</label>
         <div class="form-group col-sm-10">
           <select id='res_dropdown' class="lead">
@@ -58,16 +64,6 @@
         <!-- actual feet down shown underneath the word results-->
         <h1 id='result' class="text-center"></h1>
       </div> <!-- closes jumbotron div -->
-
-      <div class="row marketing">
-        <div class="col-lg-6">
-        </div>
-
-        <div class="col-lg-6">
-          <!-- <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p> -->
-        </div>
-      </div> <!-- closes row marketing div -->
     </div> <!-- container -->
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
@@ -79,10 +75,10 @@
 </html>
   <!--
   TODO:
-	add check for one or more parameters not specified.
 	since there are 12 inches in 1 foot, might want to consider converting a noninteger output to feet + inches. maybe...
 	stretch: as a user, I can view the feet down values of multiple reservoirs at once
 	add checks on each res which act as boundaries for levels entered which are too low or high for a particular res, as a front-end validation? better to check values on the backend
   add responsiveness
-  front-end validation
+  make level input field and get level button the same width, check on all devices and in production! I found online this css can get me in the right direction: * { box-sizing: border-box }. this is globally applied, and may change other aspects. but my css is lightweight, so hopefully this won't affect too many things
+  fix alert pushing elements down. this is typically done with setting a css rule of position: absolute. but in my case, it then overlaps content, which is arguably worse
  -->

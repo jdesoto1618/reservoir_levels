@@ -29,10 +29,14 @@ var north = {
 var output = [];
 // jquery functions
 $(document).ready(function() {
+  // hide the error message for empty input
+  $('#alert_message').hide();
   // when the user clicks south button in the nav
   $('li#south_button').click(function() {
-    $('li#south_button').addClass('active');
-    $('li#north_button').removeClass('active');
+    $('li#south_button').addClass('active').css('font-weight','bold');
+    $('li#north_button').removeClass('active').css('font-weight','normal');
+    // change text color to white of the unselected button
+    $('li#north_button a').css('color','#fff');
     // make output empty to remove anything in it. this is needed so the array from which the select is built is emptied of its previous values each time the north or south button is clicked
     output = [];
     // send the south reservoir object keys to the select tag in the markup
@@ -43,11 +47,10 @@ $(document).ready(function() {
     // join returns a string from an array, in this case the output array. so, at this point, the output array now holds all the keys from the south object. join('') places all the strings next to each other without whitespace. this allows each one to be used as an option on the res_dropdown select. use html since the markup is being modified. another advantage of using this method that i've read, is the DOM gets modified only once. changing and modifying the dom should be done as little as possible. other answers on SO showed an append to the DOM each time a new option was to be inserted. that is far more "expensive" than collecting all items to be used as options and updating the DOM once.
     $('#res_dropdown').html(output.join(''));
   }) // ends south button click function
-
   // when the user clicks north button in the nav
   $('li#north_button').click(function() {
-    $('li#south_button').removeClass('active');
-    $('li#north_button').addClass('active');
+    $('li#south_button').removeClass('active').css('font-weight','normal');
+    $('li#north_button').addClass('active').css('font-weight','bold');
     // make output empty to remove anything in it. this is needed so the array from which the select is built is emptied of its previous values each time the north or south button is clicked
     output = [];
     // send the north reservoir object keys to the select tag in the markup
@@ -60,6 +63,15 @@ $(document).ready(function() {
   }) // ends north button click function
    // when the get level button is clicked
   $("button").click(function() {
+    // sanity check for empty input field for a reservoir. this shows the bootstrap alert and also closes it after 2 seconds, 2000 milliseconds. this works once, but doesn't keep working if the form is still left blank and the get level button is repeatedly clicked.
+    // the issue was with using alert('close'), as this didn't just close the alert, it nuked it off the markup altogether. i switched to using $('#alert_message').hide(); and it... almost works. now the alert shows each time, regardless
+    // to fix that, i tested the length of the value. if it was less than 1, as in less than 1 character entered for this form, show the alert for 2 seconds. works great! it constantly tests the input field, and no longer shows the alert when a value is present
+    if($('#sc_level').val().length < 1) {
+      $('#alert_message').show();
+      setTimeout(function() {
+        $('#alert_message').hide();
+      }, 4000);
+    }
   	// run the resLevel function when the button is clicked. grab the text of the selected option from the dropdown and use this as the first parameter of the resLevel function. the second parameter is the inputted smartcover level from the user. grab that value using .val()
   	resLevel($('#res_dropdown option:selected').text(), $('#sc_level').val());
   }); // ends button click function
@@ -85,6 +97,10 @@ function resLevel(res, reading) {
 	if(typeof(res) === 'string') {
 		res = parseInt(res);
 	}
+  // sanity check for an actual value present in reading input field
+  if(reading === '') {
+    return 'Value left blank!';
+  }
 	switch(res) {
 		case 43210:
 			ftDown = reading - 3.2;
