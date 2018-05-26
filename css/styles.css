@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
 	background: #0099ff;
   font-family: 'Roboto', sans-serif;
@@ -9,10 +17,10 @@ body {
 
 .page-title {
   margin-bottom: 20px;
+	text-align: center;
 }
 
 .btn {
-  /* padding: 6px 47px; */
   font-size: 20px;
 }
 
@@ -21,7 +29,7 @@ body {
 }
 
 .alert-danger {
-  font-size: 20px;
+  font-size: 19px;
 }
 
 #result_text {
@@ -29,37 +37,46 @@ body {
 }
 
 #result {
-  /* text-align: center; */
   font-size: 30px;
   color: blue;
 }
 
 #alert_message {
-	 /* don't allow the alert message to push other dom elements */
-	/* position: absolute; */
+	margin-top: 25px;
 }
 
 .header.clearfix {
 	margin-top: 1%;
 }
 
-/* #submit_button {
+#submit_button,
+#res_dropdown,
+#sc_level {
+	width: 75%;
+	font-size: 20px;
+}
 
-} */
+#res_dropdown,
+#sc_level {
+	padding: 5px 5px;
+}
 
 #res_dropdown {
-  /*margin-left: 33.5%;*/
-  font-size: 15px;
-  border: 1px solid #0099ff;
-  border-radius: 4px;
-  padding: 5px 7px;
+	border: 1px solid #0099ff;
+	border-radius: 4px;
+  /* text-align-last: center; */
+  /* padding-right: 29px; */
+  /* direction: rtl; */
 }
 
 #sc_level {
-	font-size: 15px;
-  border: 1px solid #0099ff;
-  border-radius: 4px;
-  padding: 6px 7px;
+	border: 1px solid #0099ff;
+	border-radius: 4px;
+}
+
+#submit_button {
+	box-shadow: 0 1px 10px 2px #888;
+	border: none;
 }
 
 .num_text {
@@ -78,4 +95,12 @@ body {
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
     background-color: #b31e00;
+}
+
+.jumbotron {
+	padding-top: 5px;
+}
+
+.col-sm-offset-2 {
+	margin-bottom: 10px;
 }

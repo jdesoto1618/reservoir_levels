@@ -70,7 +70,7 @@ $(document).ready(function() {
       $('#alert_message').show();
       setTimeout(function() {
         $('#alert_message').hide();
-      }, 4000);
+      }, 3000);
     }
   	// run the resLevel function when the button is clicked. grab the text of the selected option from the dropdown and use this as the first parameter of the resLevel function. the second parameter is the inputted smartcover level from the user. grab that value using .val()
   	resLevel($('#res_dropdown option:selected').text(), $('#sc_level').val());
