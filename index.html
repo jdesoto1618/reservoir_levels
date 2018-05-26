@@ -14,12 +14,13 @@
   </head>
   <body>
     <div class="container">
-      <!-- buttons to switch between north and south are in navbar -->
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
+            <!-- buttons to switch between north and south -->
             <li role="presentation" class="active" id="north_button"><a href="#">North Reservoirs</a></li>
             <li role="presentation" id="south_button"><a href="#">South Reservoirs</a></li>
+            <li role="presentation" id="start_over"><a href="#" onclick="window.location.reload()">Start Over</a></li>
           </ul>
         </nav>
       </div> <!-- closes header clearfix div -->
@@ -48,7 +49,6 @@
           <div class="col-sm-10 sc_level_div">
             <!-- user types the reservoir level from SmartCover website -->
             <!-- placing the button in the p tag gives the input its own line -->
-            <!-- <p><input id='sc_level' type='text' placeholder='SmartCover Level'></p> -->
             <p><input id='sc_level' type="number" placeholder='SmartCover Level'></p>
           </div>
         </div>
@@ -78,5 +78,4 @@
 	add checks on each res which act as boundaries for levels entered which are too low or high for a particular res, as a front-end validation? better to check values on the backend
   add responsiveness
   fix alert pushing elements down. this is typically done with setting a css rule of position: absolute. but in my case, it then overlaps content, which is arguably worse
-  make an input form validation for the sc level. text input doesn't break the program, but it does display the result as NaN. This input has to be text so the user can enter any number?
  -->

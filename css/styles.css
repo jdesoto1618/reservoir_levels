@@ -92,8 +92,16 @@ body {
 }
 
 /* starting styles for the south button in nav */
-#south_button>a {
+#south_button>a,
+#start_over>a {
 	color: #fff;
+}
+
+/* set button text size in navbar */
+#north_button,
+#south_button,
+#start_over {
+  font-size: 18px;
 }
 
 /* styles for navbar buttons on hover. note this doesn't work in mobile unless it's long pressed */
