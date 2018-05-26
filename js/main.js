@@ -61,9 +61,9 @@ $(document).ready(function() {
     // join returns a string from an array, in this case the output array. so, at this point, the output array now holds all the keys from the north object. join('') places all the strings next to each other without whitespace. this allows each one to be used as an option on the res_dropdown select. use html since the markup is being modified
     $('#res_dropdown').html(output.join(''));
   }) // ends north button click function
-   // when the get level button is clicked
+   // when the feet down button is clicked
   $("button").click(function() {
-    // sanity check for empty input field for a reservoir. this shows the bootstrap alert and also closes it after 2 seconds, 2000 milliseconds. this works once, but doesn't keep working if the form is still left blank and the get level button is repeatedly clicked.
+    // sanity check for empty input field for a reservoir. this shows the bootstrap alert and also closes it after 2 seconds, 2000 milliseconds. this works once, but doesn't keep working if the form is still left blank and the feet down button is repeatedly clicked.
     // the issue was with using alert('close'), as this didn't just close the alert, it nuked it off the markup altogether. i switched to using $('#alert_message').hide(); and it... almost works. now the alert shows each time, regardless
     // to fix that, i tested the length of the value. if it was less than 1, as in less than 1 character entered for this form, show the alert for 2 seconds. works great! it constantly tests the input field, and no longer shows the alert when a value is present
     if($('#sc_level').val().length < 1) {
