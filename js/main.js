@@ -34,7 +34,7 @@ $(document).ready(function() {
   // target the nav when screen size falls below the breakpoint
   $('.menu-container').on('click', function(){
     // give the menu another class of open if it doesn't have it already. Remove it if it does
-    $('.list-inline').toggleClass('open');
+    $('#buttons').toggleClass('open');
     // add class of change to menu-container div when it's clicked. This will trigger the css change selector
     $('.menu-container').toggleClass('change');
   }) // ends click function for hamburger menu
