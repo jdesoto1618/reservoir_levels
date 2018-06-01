@@ -92,15 +92,13 @@ body {
 }
 
 /* starting styles for the south button in nav */
-#south_button>a,
-#start_over>a {
+#south_button>a {
 	color: #fff;
 }
 
 /* set button text size in navbar */
 #north_button,
-#south_button,
-#start_over {
+#south_button {
   font-size: 18px;
 }
 
@@ -132,12 +130,14 @@ body {
 
   .list-inline {
     height: 50px;
+    width: 100%;
     transition: height 0.6s;
+    padding-right: 5px;
+    margin: 0;
   }
 
   .north_button,
-  .south_button,
-  .start_over_button {
+  .south_button {
     width: 100%;
     margin-left: 2px;
   }
@@ -159,7 +159,8 @@ body {
 
   /* set the height when the hamburger menu is clicked */
   .open {
-    height: 140px;
+    height: 90px;
+    width: 100%; /* couldn't figure out how to make the buttons take up the entire line after removing the start over button. this seemed to work, though */
   }
 
   /* Rotate top bar */
@@ -183,5 +184,4 @@ body {
     width: 100%; /* set buttons to take up their own row */
     overflow: hidden; /* this allows the buttons to be hidden by the rest of the page until the hamburger menu is clicked */
   }
-
 }
