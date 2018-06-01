@@ -100,6 +100,7 @@ body {
 #north_button,
 #south_button {
   font-size: 18px;
+  letter-spacing: 1px;
 }
 
 /* styles for navbar buttons on hover. note this doesn't work in mobile unless it's long pressed */
