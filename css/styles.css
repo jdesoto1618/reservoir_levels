@@ -145,8 +145,6 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  /* use color transparent to hide the text in the span markup. removed the text and this property also works */
-  /* color: transparent; */
   background-size: cover;
   background-position: 50% 50%;
   opacity: 0;
