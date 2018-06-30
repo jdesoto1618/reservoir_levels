@@ -53,15 +53,8 @@
         <h1 class="page-title">Check Water Level</h1>
         <label class="control-label col-sm-2">Reservoir:</label>
         <div class="form-group col-sm-10">
-          <select id='res_dropdown' class="lead">
-        	  <option id='43210'>43210</option>
-            <option id='43610'>43610</option>
-            <option id='51771'>51771</option>
-            <option id='52698'>52698</option>
-            <option id='53116'>53116</option>
-            <option id='62310'>62310</option>
-            <option id='63210'>63210</option>
-          </select>
+          <!-- this is filled in with options in js file -->
+          <select id='res_dropdown' class="lead"></select>
         </div> <!-- closes form-group div -->
         <div class="form-group">
           <label class="control-label col-sm-2">Reading:</label>
@@ -91,11 +84,11 @@
   </body>
 </html>
   <!--
-  TODO:
-	since there are 12 inches in 1 foot, might want to consider converting a noninteger output to feet + inches. maybe...
-	stretch: as a user, I can view the feet down values of multiple reservoirs at once
-	add checks on each res which act as boundaries for levels entered which are too low or high for a particular res, as a front-end validation? better to check values on the backend
-  add responsiveness
-  fix alert pushing elements down. this is typically done with setting a css rule of position: absolute. but in my case, it then overlaps content, which is arguably worse
-  add b/w background image switcher. should take up entire screen background and auto fade out as the next one fades in
+    TODO:
+  	since there are 12 inches in 1 foot, might want to consider converting a noninteger output to feet + inches. maybe...
+  	stretch: as a user, I can view the feet down values of multiple reservoirs at once
+  	add checks on each res which act as boundaries for levels entered which are too low or high for a particular res, as a front-end validation? better to check values on the backend
+    fix alert pushing elements down. this is typically done with setting a css rule of position: absolute. but in my case, it then overlaps content, which is arguably worse
+    check js for adding options. this is already in place for the south res; i should be able to remove the options for the north and bind those to js as well
+    consider placing entire jumbotron as collapsed by default, perhaps as a nav button. clicking it restores it as it is now on load. the only reason i'm thinking about this is to shwo the entire css backgrounds, which are now actual res. could add to the navbar: 'Check Levels' button
  -->

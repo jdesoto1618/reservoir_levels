@@ -25,8 +25,16 @@ var north = {
   62310: 23.5,
   63210: 19.8,
 } // closes north object
+
 // jquery functions
 $(document).ready(function() {
+  // send the north reservoir object keys to the select tag in the markup immediately. this should populate by default
+  $.each(north, function(key) {
+    output.push('<option id="'+ key +'">'+ key +'</option>');
+  }); // ends north function for  each key, value
+  // after the north object's keys are passed as options, use join and html to get the dropdown to populate
+  $('#res_dropdown').html(output.join(''));
+
   // hide the error message for empty input
   $('#alert_message').hide();
   // target the nav when screen size falls below the breakpoint
@@ -39,6 +47,8 @@ $(document).ready(function() {
 
   // when the user clicks south button in the nav
   $('li#south_button').click(function() {
+    // remove any value in the reading field. this is an input field, set the val to empty
+    $('#sc_level').val('');
     $('li#south_button').addClass('active').css('font-weight','bold');
     $('li#north_button').removeClass('active').css('font-weight','normal');
     // change text color to white of the unselected button
@@ -46,26 +56,28 @@ $(document).ready(function() {
     // make output empty to remove anything in it. this is needed so the array from which the select is built is emptied of its previous values each time the north or south button is clicked
     output = [];
     // send the south reservoir object keys to the select tag in the markup
-    $.each(south, function(key, value)
+    $.each(south, function(key)
     {
       output.push('<option id="'+ key +'">'+ key +'</option>');
     }); // ends south function for  each key, value
-    // join returns a string from an array, in this case the output array. so, at this point, the output array now holds all the keys from the south object. join('') places all the strings next to each other without whitespace. this allows each one to be used as an option on the res_dropdown select. use html since the markup is being modified. another advantage of using this method that i've read, is the DOM gets modified only once. changing and modifying the dom should be done as little as possible. other answers on SO showed an append to the DOM each time a new option was to be inserted. that is far more "expensive" than collecting all items to be used as options and updating the DOM once.
+    // join returns a string from an array, in this case the output array. at this point, the output array now holds all the keys from the south object. join('') places all the strings next to each other without whitespace. this allows each one to be used as an option on the res_dropdown select. use html since the markup is being modified. another advantage of using this method that i've read, is the DOM gets modified only once. changing and modifying the dom should be done as little as possible. other answers on SO showed an append to the DOM each time a new option was to be inserted. that is far more "expensive" than collecting all items to be used as options and updating the DOM once.
     $('#res_dropdown').html(output.join(''));
   }) // ends south button click function
 
   // when the user clicks north button in the nav
   $('li#north_button').click(function() {
+    // remove any value in the reading field. this is an input field, set the val to empty
+    $('#sc_level').val('');
     $('li#south_button').removeClass('active').css('font-weight','normal');
     $('li#north_button').addClass('active').css('font-weight','bold');
     // make output empty to remove anything in it. this is needed so the array from which the select is built is emptied of its previous values each time the north or south button is clicked
     output = [];
     // send the north reservoir object keys to the select tag in the markup
-    $.each(north, function(key, value)
+    $.each(north, function(key)
     {
       output.push('<option id="'+ key +'">'+ key +'</option>');
-    }); // ends south function for  each key, value
-    // join returns a string from an array, in this case the output array. so, at this point, the output array now holds all the keys from the north object. join('') places all the strings next to each other without whitespace. this allows each one to be used as an option on the res_dropdown select. use html since the markup is being modified
+    }); // ends north function for  each key, value
+    // join returns a string from an array, in this case the output array. at this point, the output array now holds all the keys from the north object. join('') places all the strings next to each other without whitespace. this allows each one to be used as an option on the res_dropdown select. use html since the markup is being modified
     $('#res_dropdown').html(output.join(''));
   }); // ends north button click function
 
