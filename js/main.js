@@ -28,7 +28,7 @@ var north = {
 
 // jquery functions
 $(document).ready(function() {
-  // send the north reservoir object keys to the select tag in the markup immediately. this should populate by default
+  // send the north reservoir object keys to the select tag in the markup immediately
   $.each(north, function(key) {
     output.push('<option id="'+ key +'">'+ key +'</option>');
   }); // ends north function for  each key, value
