@@ -109,9 +109,10 @@ body {
   background-color: #b31e00;
 }
 
-/* reduce top padding inside jumbotron */
+/* reduce top padding inside jumbotron. set opacity very slightly see through */
 .jumbotron {
 	padding-top: 5px;
+  opacity: 0.9;
 }
 
 /* give more space between feet down button and Result: */
@@ -150,33 +151,38 @@ body {
   opacity: 0;
   z-index: 0;
   /* the total time for all aniamtions. time at the end is animation start delay */
-  animation: imageAnimation 36s linear infinite 0s;
+  animation: imageAnimation 49s linear infinite 0s;
 }
 
 /* place the images into the spans in the markup */
 /* each image after the first will appear after a fixed delay */
+/* use .. to go back one directory from the current one which is css, then search in bg */
 .cb-slideshow li:nth-child(1) span {
-  background-image: url(../bg/water_res_1.jpg)
+  background-image: url(../bg/33710.jpg)
 }
 .cb-slideshow li:nth-child(2) span {
-  background-image: url(../bg/water_res_2.jpg);
-  animation-delay: 6s;
+  background-image: url(../bg/28150.jpg);
+  animation-delay: 7s;
 }
 .cb-slideshow li:nth-child(3) span {
-  background-image: url(../bg/water_res_3.jpg);
-  animation-delay: 12s;
+  background-image: url(../bg/51772.jpg);
+  animation-delay: 14s;
 }
 .cb-slideshow li:nth-child(4) span {
-  background-image: url(../bg/water_res_4.jpg);
-  animation-delay: 18s;
+  background-image: url(../bg/53116.jpg);
+  animation-delay: 21s;
 }
 .cb-slideshow li:nth-child(5) span {
-  background-image: url(../bg/water_res_5.jpg);
-  animation-delay: 24s;
+  background-image: url(../bg/63210.jpg);
+  animation-delay: 28s;
 }
 .cb-slideshow li:nth-child(6) span {
-  background-image: url(../bg/water_res_6.png);
-  animation-delay: 30s;
+  background-image: url(../bg/25191.jpg);
+  animation-delay: 35s;
+}
+.cb-slideshow li:nth-child(7) span {
+  background-image: url(../bg/13151.jpg);
+  animation-delay: 42s;
 }
 
 /* set keyframes for the animations. this is the timings and ease in and out for each animation */
